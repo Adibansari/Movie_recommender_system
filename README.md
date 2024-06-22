@@ -1,99 +1,99 @@
-Movie Recommender System
+# Movie Recommendation System
 
-Welcome to the Movie Recommender System project! This system allows users to discover new movies similar to their selected movie, making movie recommendations based on content similarity.
+## Overview
+This repository contains code for a movie recommendation system based on content filtering using natural language processing techniques. It preprocesses movie data, extracts features, and uses cosine similarity to recommend movies similar to a given input movie.
 
-Table of Contents
+## Project Structure
+The project structure is as follows:
+.
 
-Demo
+├── preprocessing.ipynb
 
-Features
+├── tmdb_5000_movies.csv
 
+├── tmdb_5000_credits.csv
 
-Getting Started
+├── movie_dict.pkl
 
+├── similarity.pkl
 
-Prerequisites
+├── Procfile
 
+├── setup.sh
 
+├── requirements.txt
 
-Installation
+├── app.py
 
+└── README.md
 
+- `preprocessing.ipynb`: Jupyter notebook containing code for preprocessing movie data and building the recommendation system.
+- `tmdb_5000_movies.csv`: Dataset containing movie information.
+- `tmdb_5000_credits.csv`: Dataset containing movie credits information.
+- `movie_dict.pkl`: Pickled file containing movie data in dictionary format.
+- `similarity.pkl`: Pickled file containing cosine similarity matrix.
+- `Procfile`: File specifying the commands that are executed by the app on startup.
+- `setup.sh`: Shell script to configure Streamlit for deployment.
+- `requirements.txt`: File listing required Python packages.
+- `app.py`: Streamlit application code for the recommendation system.
 
-Usage
-
-
-Contributing
-
-
-Demo
-
-
-Explore the Movie Recommender System with this Demo Video (Add a link to a demo video or a live demo if available).
-
-Features
-
-
-Content-Based Recommendations: Select a movie to get recommendations based on content similarity.
-Visual Appeal: Provides movie posters for recommended movies.
-User-Friendly Interface: Powered by Streamlit, offering an easy-to-use web interface.
-Efficient Recommendation: Utilizes a pre-trained model for efficient movie recommendations.
-Scalable: Easily extendable to support more movies and data.
-
-
-Getting Started
-
-
-Prerequisites
-
-
-Before you begin, ensure you have met the following requirements:
-
-Python: This project is written in Python. Make sure you have it installed on your system.
-
-Installation
-
-
-Clone the repository:
-
-
-git clone https://github.com/Adibansari/Movie_recommender_system.git
-
-
-Change to the project directory:
-
-cd Movie_recommender_system
-
-
-Install the required Python libraries:
-
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Adibansari/Movie_recommender_system
+   cd your_project
+2. Install the required Python packages:
 pip install -r requirements.txt
+## Usage
 
+1. **Run the Jupyter notebook `preprocessing.ipynb` to preprocess the movie data and build the recommendation system.**
 
-Usage
+2. **Execute the cells in the notebook to:**
+   - Load and merge movie data (`tmdb_5000_movies.csv` and `tmdb_5000_credits.csv`).
+   - Clean and preprocess the data.
+   - Generate tags for each movie based on its overview, genres, keywords, cast, and crew.
+   - Implement stemming and vectorization of tags using CountVectorizer.
+   - Calculate cosine similarity between movies.
+   - Build a function to recommend movies similar to a given input movie.
 
-Run the Streamlit application:
+3. **Save the processed data and models as pickled files:**
+   - `movie_dict.pkl`: Movie data in dictionary format.
+   - `similarity.pkl`: Cosine similarity matrix.
 
+## Deploying with Streamlit
 
-streamlit run app.py
+1. **Create a `Procfile` in the root directory with the following content:**
+   ```bash
+    web: sh setup.sh && streamlit run app.py
 
+2. **Create or update `setup.sh` with the following content to configure Streamlit:**
 
-Open a web browser and navigate to the URL provided by Streamlit.
+   ```bash
+    mkdir -p ~/.streamlit/
+    echo "\
+   [server]\n\
+   port = $PORT\n\
+   enableCORS = false\n\
+   headless = true\n\
+   " > ~/.streamlit/config.toml
 
-Select a movie from the dropdown list and click the "Recommend" button to get movie recommendations.
+3. **Update app.py with your Streamlit application code.**
+4. **Deploy your app to a platform that supports Streamlit apps, such as Heroku.**
+## Technologies Used
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- NLTK
+- Streamlit
+- Requests (for fetching movie data from API)
 
-Contributing
+## Contributing
+Contributions to the project are welcome! Here's how you can contribute: 
+- Fork the repository.
+- Create a new branch (git checkout -b feature-branch).
+- Make your changes.
+- Commit your changes (git commit -am 'Add new feature').
+- Push to the branch (git push origin feature-branch).
+- Create a new Pull Request.
 
-
-Contributions are what make the open source community an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
-
-Fork the project.
-
-
-Create your feature branch: git checkout -b feature/your-feature.
-
-Commit your changes: git commit -m 'Add some feature'.
-
-Push to the branch: git push origin feature/your-feature.
-
-Open a pull request.
