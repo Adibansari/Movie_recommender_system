@@ -47,9 +47,6 @@ pip install -r requirements.txt
    - Calculate cosine similarity between movies.
    - Build a function to recommend movies similar to a given input movie.
 
-3. **Save the processed data and models as pickled files:**
-   - `movie_dict.pkl`: Movie data in dictionary format.
-   - `similarity.pkl`: Cosine similarity matrix.
 
 ## Deploying with Streamlit
 
