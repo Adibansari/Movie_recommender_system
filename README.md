@@ -9,13 +9,7 @@ The project structure is as follows:
 
 ├── preprocessing.ipynb
 
-├── tmdb_5000_movies.csv
-
-├── tmdb_5000_credits.csv
-
 ├── movie_dict.pkl
-
-├── similarity.pkl
 
 ├── Procfile
 
@@ -28,10 +22,7 @@ The project structure is as follows:
 └── README.md
 
 - `preprocessing.ipynb`: Jupyter notebook containing code for preprocessing movie data and building the recommendation system.
-- `tmdb_5000_movies.csv`: Dataset containing movie information.
-- `tmdb_5000_credits.csv`: Dataset containing movie credits information.
 - `movie_dict.pkl`: Pickled file containing movie data in dictionary format.
-- `similarity.pkl`: Pickled file containing cosine similarity matrix.
 - `Procfile`: File specifying the commands that are executed by the app on startup.
 - `setup.sh`: Shell script to configure Streamlit for deployment.
 - `requirements.txt`: File listing required Python packages.
